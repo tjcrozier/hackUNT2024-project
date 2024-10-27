@@ -32,19 +32,13 @@ ENTER
       "Content-Type": "text/html",
     },
   }).then(onSuccess);
-
-    }
+  }
 
     function onSuccess(data){
       data.json().then(outputResult)
-      
     }
 
     function outputResult(data){
-      // console.log(data)
-
-      // const x = data;
-
       const reduced = data['options']
 
       for (const key in reduced) {
