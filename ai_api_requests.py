@@ -23,7 +23,7 @@ class user_data():
 secrets = open("api_keys/keys.json")
 key = json.load(secrets)["OPENAI_API_KEY"]
 
-def getSuggestions(wardrobe, num_of_ideas, notes = ""):
+def getSuggestions(wardrobe, num_of_ideas = 1, notes = ""):
     my_user = user_data()
     user_data.wardrobe = wardrobe
     user_data.user_notes = notes
@@ -45,6 +45,7 @@ def getSuggestions(wardrobe, num_of_ideas, notes = ""):
     sys_prompt = """
     Come up with three unique creative halloween costume/cosplay idea using the available articles of clothing.
     Try to use existing characters.
+    Make your ideas as scary as possible.
     When choosing which clothes to use, you must use only clothes listed in the wardrobe, or,
     if you choose to add items not listed in the wardrobe, they must also be listed in the suggested items
     Try to make complete outfits, with a top, bottom, shoes, and accessories when applicable.
@@ -104,4 +105,5 @@ def getSuggestions(wardrobe, num_of_ideas, notes = ""):
     print(completion.choices[0].message.parsed)
     
 clothes = ["red hat", "blue overalls", "brown boots"]
-#print(getSuggestions(clothes, 4, "don't give me mario"))
+print(getSuggestions(clothes,4))
+
