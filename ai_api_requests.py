@@ -49,12 +49,10 @@ def getSuggestions(wardrobe, num_of_ideas = 1, notes = ""):
     sys_prompt = """
     Come up with three unique creative halloween costume/cosplay idea using the available articles of clothing.
     Try to use existing characters.
+    Please suggest additional items you think would help complete the outfit.
     Make your ideas as scary as possible.
-    When choosing which clothes to use, you must use only clothes listed in the wardrobe, or,
-    if you choose to add items not listed in the wardrobe, they must also be listed in the suggested items
+    When choosing which clothes to use, you must use only clothes listed in the wardrobe.
     Try to make complete outfits, with a top, bottom, shoes, and accessories when applicable.
-    Do not be afraid to include your suggestions in the clothes used! The clothes used field should mostly include
-    items from the user's wardrobe, but should also include up to two items of your choosing.
     When coming up with multiple choices, do not include repeat ideas!
     When coming up with ideas, you may also include suggested items to add to complete the costume.
     """
