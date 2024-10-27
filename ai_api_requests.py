@@ -3,12 +3,16 @@ from openai import OpenAI
 import json
 
 #Class to be returned by GPT
-class costume_idea(BaseModel):
+
+class CostumeIdea(BaseModel):
     name: str
     clothes_used: list[str]
     reason: str
     suggested_items: list[str]
     suggestion_reasoning: str
+    
+class CostumeWrapper(BaseModel):
+    options: list[CostumeIdea]
     
 #Class for user input
 class user_data():
@@ -37,13 +41,13 @@ for i in range(1, 5):
 print(str(my_user.wardrobe))
 
 sys_prompt = """
-Come up with a creative halloween costume/cosplay idea using the available articles of clothing.
+Come up with three unique creative halloween costume/cosplay idea using the available articles of clothing.
 Try to use existing characters.
 When choosing which clothes to use, you must use only clothes listed in the wardrobe, or,
 if you choose to add items not listed in the wardrobe, they must also be listed in the suggested items
 Try to make complete outfits, with a top, bottom, shoes, and accessories when applicable.
 Do not be afraid to include your suggestions in the clothes used!
-When coming up with multiple choices, try to diversify and don't repeat ideas!
+When coming up with multiple choices, do not include repeat ideas!
 When coming up with ideas, you may also include suggested items to add to complete the costume.
 """
 
@@ -65,15 +69,14 @@ print(sys_prompt, "\n", user_prompt, "\n")
 
 completion = client.beta.chat.completions.parse(
     model="gpt-4o-mini",
-    n=3,
-    presence_penalty=2,
+    # presence_penalty=2,
     messages=[
         #Instructions for GPT within the triple quotes!
         {"role": "system", "content": sys_prompt},
         #User message input after content":
         {"role": "user", "content": str(my_user.wardrobe)},
     ],
-    response_format=costume_idea
+    response_format=CostumeWrapper
 )
 
 #Print only the names of outputs
@@ -88,9 +91,10 @@ print(completion.choices[2].message.parsed.name)
 """
 
 #Print the full output of each
-print("Option 1\n")
+# print("Option 1\n")
+# print(completion.choices[0].message.parsed)
+# print("Option 2\n")
+# print(completion.choices[1].message.parsed)
+# print("Option 3\n")
+# print(completion.choices[2].message.parsed)
 print(completion.choices[0].message.parsed)
-print("Option 2\n")
-print(completion.choices[1].message.parsed)
-print("Option 3\n")
-print(completion.choices[2].message.parsed)
