@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <p id="demo">
-Input Words Hereee:<input type:"text">
+Input Words Hereee:<input id="textInput" type:"text">
 </p>
 <button onclick="myFunc()">
 ENTER
@@ -9,7 +9,14 @@ ENTER
 
 <script>
     function myFunc(){
-        document.getElementById("demo").innerHTML = "outfit suggestion ermmmmm wear shoes";
+        console.log(document.getElementById("textInput").value);
+        console.log(fetch("/submit",  {
+        method: "POST",
+        body: document.getElementById("textInput").value,
+        headers: {
+      "Content-Type": "text/html",
+    },
+  }));
     }
 </script>
 </html>
