@@ -1,5 +1,5 @@
 @font-face{
-  font-family: 'StoryBook'; src: url('/static/Storyboo.TTF');
+  font-family: 'Billo-Dream'; src: url('/static/BILLDRE.TTF');
 }
 .container{
   width: 500px;
@@ -20,7 +20,7 @@ img.logo{
 h1{
   text-align: center;
   color: #92f5c3;
-  font-family: 'StoryBook', 'Times New Roman';
+  font-family: 'Billo-Dream', 'Times New Roman';
 }
 
 body{
