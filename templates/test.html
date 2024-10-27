@@ -8,21 +8,48 @@ Input Words Hereee:<input id="textInput" type:"text">
 ENTER
 </button>
 
+<p id="output"></p>
+
 <script>
     function myFunc(){
         console.log(document.getElementById("textInput").value);
-        console.log(fetch("/submit",  {
+        fetch("/submit",  {
         method: "POST",
         body: document.getElementById("textInput").value,
         headers: {
       "Content-Type": "text/html",
     },
-  }).then(onSuccess));
+  }).then(onSuccess);
 
     }
 
     function onSuccess(data){
-      console.log(data.json())
+      data.json().then(outputResult)
+      
     }
+
+    function outputResult(data){
+      // console.log(data)
+
+      // const x = data;
+
+      const reduced = data['options']
+
+      for (const key in reduced) {
+        if (Object.prototype.hasOwnProperty.call(reduced, key)) {
+          const element = reduced[key];
+          console.log(element.name)
+          console.log(element.reason)
+          
+        }
+      }
+
+
+    }
+
+      //console.log(data.jlk
+      // console.log(data["options"]["0"]["name"])
+      //console.log(typeof(data))
+      // console.log(data["options"]["1"]["name"])
 </script>
 </html>
