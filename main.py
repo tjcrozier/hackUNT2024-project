@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, Response, make_response
-import ai_api_requests
+from canopy import asin_to_json
 
 app = Flask(__name__)
 
@@ -11,8 +11,7 @@ def main():
 
 @app.post('/submit')
 def process_data():
-    print(request.get_data(as_text=True).split(","))
-    return make_response("foo")
+    return asin_to_json(request.get_data(as_text=True).split(","))
     
 if __name__ == '__main__':
     app.run()
