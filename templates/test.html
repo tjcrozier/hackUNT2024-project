@@ -3,6 +3,7 @@
 <p id="demo">
 Input Words Hereee:<input id="textInput" type:"text">
 </p>
+
 <button onclick="myFunc()">
 ENTER
 </button>
@@ -16,7 +17,12 @@ ENTER
         headers: {
       "Content-Type": "text/html",
     },
-  }));
+  }).then(onSuccess));
+
+    }
+
+    function onSuccess(data){
+      console.log(data.json())
     }
 </script>
 </html>
