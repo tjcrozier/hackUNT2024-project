@@ -68,7 +68,7 @@ def getSuggestions(wardrobe, num_of_ideas = 1, notes = ""):
     user_prompt += (str(my_user.wardrobe))
 
     #Debug
-    print(sys_prompt, "\n", user_prompt, "\n")
+    #print(sys_prompt, "\n", user_prompt, "\n")
 
 
     
@@ -107,7 +107,7 @@ def getSuggestions(wardrobe, num_of_ideas = 1, notes = ""):
     print(completion.choices[0].message.parsed)
 
 
-clothes = ["red hat", "blue overalls", "brown boots"]
-print(getSuggestions(clothes,4))
+#clothes = ["red hat", "blue overalls", "brown boots"]
+#print(getSuggestions(clothes,4))
 #print(json_output)
 #print(type(json_output))
