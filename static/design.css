@@ -1,6 +1,6 @@
 @font-face{
-  font-family: 'Billo-Dream'; 
-  src: url('/static/BILLDRE.TTF');
+  font-family: 'Bub'; 
+  src: url('/static/bub.ttf');
 }
 
 @keyframes floating {
@@ -21,6 +21,7 @@
   column-gap: 5px;
   align-items: center;
   justify-content: flex-end;
+  flex-flow: row wrap;
   text-align: right;
   width: 600px;
   margin-left: auto;
@@ -33,25 +34,47 @@
   border-radius: 10px;
 }
 
+img.slides{
+  width: 300px;
+  height: auto;
+  border-color: orange;
+  border-style: solid;
+  margin-left: 0px;
+  margin-right: 20px;  
+}
+
+
 img.logo{
   width: 100px;
   height: auto;
-  float: center;
-  margin-left: 20px;
+  margin-left: 250px;
   margin-right: 0;
+  background: radial-gradient(#21002B, #2F0046);
 }
+
 
 h1{
   text-align: center;
+  font-size: 50px;
   color: #92f5c3;
-  font-family: 'Billo-Dream', 'Times New Roman';
+  font-family: 'Bub', 'Times New Roman';
   margin-top: 0;
   margin-bottom: 0;
 }
 
+h3{
+  color: #E8992B;
+  font-size: 16px;
+  margin-left: 0;
+  margin-right: 50px;
+  padding-right: 100px;
+  margin-top: -200px;
+  top: 20px;
+}
+
 body{
   background-color: black;
-  background-image: linear-gradient(black 70%, #1C002B);
+  background-image: linear-gradient(#500556 20%, ##21002B);
   height: 200%;
   min-height: 200%;
 }
