@@ -14,6 +14,10 @@ class CostumeIdea(BaseModel):
 class CostumeWrapper(BaseModel):
     options: list[CostumeIdea]
     
+def convert_to_json(wrapper: CostumeWrapper) -> str:
+    # Convert to dictionary first, then to JSON string
+    return json.dumps(wrapper.dict(), indent=4)
+    
 #Class for user input
 class user_data():
     wardrobe = []
@@ -83,7 +87,7 @@ def getSuggestions(wardrobe, num_of_ideas = 1, notes = ""):
         response_format=CostumeWrapper
     )
 
-    return(completion.choices[0].message.parsed)
+    return(convert_to_json(completion.choices[0].message.parsed))
     #Print only the names of outputs
     #NOTE:
     #Elements of each response can be accessed like so
@@ -103,7 +107,9 @@ def getSuggestions(wardrobe, num_of_ideas = 1, notes = ""):
     # print("Option 3\n")
     # print(completion.choices[2].message.parsed)
     print(completion.choices[0].message.parsed)
-    
+
+
 clothes = ["red hat", "blue overalls", "brown boots"]
 print(getSuggestions(clothes,4))
-
+#print(json_output)
+#print(type(json_output))
