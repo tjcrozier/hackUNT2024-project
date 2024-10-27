@@ -64,17 +64,24 @@ h1{
 
 h3{
   color: #E8992B;
-  font-size: 16px;
+  font-size: 32px;
   margin-left: 0;
   margin-right: 50px;
-  padding-right: 100px;
+  padding-right: 0;
   margin-top: -200px;
   top: 20px;
 }
 
+p{
+  color: #B05ADC;
+  font-size: 16px;
+  margin-top: -450px;
+  margin-left: 400px;
+}
+
 body{
   background-color: black;
-  background-image: linear-gradient(#500556 20%, ##21002B);
+  background-image: linear-gradient(#500556 20%, #21002B);
   height: 200%;
   min-height: 200%;
 }
@@ -107,11 +114,12 @@ button:hover{
 
 .flip-card {
   margin-left: auto;
-  margin-right: 55px;
+  margin-right: 500px;
   display: flex;
   align-content: center;
   justify-content: flex-end;
-  padding-top: 20px;
+  margin-top: -50px;
+  padding-bottom: 50px;
   width: 150px;
   height: 150px;
   perspective: 1000px;
