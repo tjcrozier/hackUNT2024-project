@@ -1,0 +1,100 @@
+@font-face {
+    font-family: 'StoryBook'; 
+    src: url(https://dl.dropbox.com/s/w11p11if3spnd0l/Bratsy%20Script%20Demo.ttf);
+  }
+  
+  @keyframes floating {
+    0% {transform: translate(0, 1px);}
+    50% {transform: translate(0,5px);}
+    100% {transform: translate(0, -1px);}
+  }
+  
+  #floatimation {
+    animation: floating;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+  .container{
+    display: flex;
+    column-gap: 5px;
+    align-items: center;
+    justify-content: flex-end;
+    flex-flow: row wrap;
+    text-align: right;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    height: auto;
+    background-color: #2f0046;
+    border-radius: 10px;
+  }
+  
+  h1{
+    text-align: center;
+    font-size: 50px;
+    color: #92f5c3;
+    font-family: 'StoryBook', 'Times New Roman';
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  
+  h3{
+    color: #E8992B;
+    font-size: 16px;
+    margin-left: 0;
+    margin-right: 50px;
+    padding-right: 100px;
+    margin-top: -200px;
+    top: 20px;
+  }
+  
+  body{
+    background-color: #21002B;
+    height: 200%;
+    min-height: 200%;
+  }
+  
+  a:link{
+    color: white;
+    text-decoration: none;
+  }
+  
+  a:visited{
+    color: white;
+    text-decoration: none;
+  }
+  
+  button{
+    background-color: #2F0046;
+    font-family: 'Courier New';
+    color: white;
+    font-size: 20px;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 7px;
+    border: 1px solid #92f5c3;
+    border-radius: 3px;
+    
+  }
+  button:hover{
+    background-color: #E8992B;
+    border: #2F0046;
+    color: black;
+  }
+  
+  p{
+    color: #92f5c3;
+    text-align: center;
+    margin-right: 200px;
+  }
+  
+  input{
+    border-radius: 100px;
+    border: 1px solid #92f5c3;
+    background-color:#A858D2;
+    color: purple;
+  }
