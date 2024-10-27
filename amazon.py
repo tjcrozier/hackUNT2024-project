@@ -1,5 +1,5 @@
 import requests
-from api_keys.constants import AMAZON_API_KEY
+import json
 
 # Define the URL of the GraphQL endpoint
 url = 'https://graphql.canopyapi.co/'
@@ -18,9 +18,12 @@ query amazonProduct($asin: String!) {
 }
 """
 
+secrets = open("secrets.json")
+key = json.load(secrets)["AMAZON_API_KEY"]
+
 headers = {
     'Content-Type': 'application/json',
-    'API-KEY': AMAZON_API_KEY(),
+    'API-KEY': key,
 }
 
 variables = {
