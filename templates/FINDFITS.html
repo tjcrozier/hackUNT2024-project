@@ -22,6 +22,22 @@ ENTER
 
 <p id="output"></p>
 
+<div id="1" class="container">
+  <p>
+  </p>
+  </div>
+  
+  <div id="2" class="container">
+  <p>
+  </p>
+  </div>
+  
+  <div id="3" class="container">
+  <p>
+  </p>
+  </div>
+
+</html>
 <script>
     function myFunc(){
         console.log(document.getElementById("textInput").value);
@@ -40,12 +56,13 @@ ENTER
 
     function outputResult(data){
       const reduced = data['options']
-
+      i = 1;
       for (const key in reduced) {
         if (Object.prototype.hasOwnProperty.call(reduced, key)) {
           const element = reduced[key];
-          console.log(element.name)
+          document.getElementById(i).innerHTML = (element.name) + "\n" + element.clothes_used + "\n" + element.reason +  "\n" + element.suggested_items + "\n"
           console.log(element.reason)
+          i++
           
         }
       }
@@ -58,20 +75,3 @@ ENTER
       //console.log(typeof(data))
       // console.log(data["options"]["1"]["name"])
 </script>
-
-<div class="container">
-  <p>
-  </p>
-  </div>
-  
-  <div class="container">
-  <p>
-  </p>
-  </div>
-  
-  <div class="container">
-  <p>
-  </p>
-  </div>
-
-</html>
